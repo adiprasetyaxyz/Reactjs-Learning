@@ -1,13 +1,9 @@
-export default function Fruit({ name, price }) {
+export default function Fruit({ name, price, soldout }) {
   return (
     <>
-      {price >= 10000 ? (
-        <li>
-          {name}: Rp.{price}
-        </li>
-      ) : (
-        ""
-      )}
+      <li>
+        {name}: Rp.{price} {soldout ? "Sold Out" : ""}
+      </li>
       {/* {name}: Rp.{price} */}
     </>
   );
