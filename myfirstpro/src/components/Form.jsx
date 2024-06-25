@@ -9,7 +9,7 @@ export default function Form() {
   return (
     <div>
       {name.firstName + name.lastName}
-      <form action="">
+      <form onSubmit={(e) => handleSubmit(e)}>
         <input
           onChange={(e) => setName({ ...name, firstName: e.target.value })}
           type="text"
@@ -20,7 +20,7 @@ export default function Form() {
           type="text"
           value={name.lastName}
         />
-        <button onClick={(e) => handleSubmit(e)}>Submit</button>
+        <button>Submit</button>
       </form>
     </div>
   );
