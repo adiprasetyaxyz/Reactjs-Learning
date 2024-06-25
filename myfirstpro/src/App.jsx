@@ -1,11 +1,12 @@
 import Conditional from "./components/ConditionalComponent";
+import Counter from "./components/Counter";
 import Fruit from "./components/Fruit";
 import Fruits from "./components/Fruits";
 import Hello from "./components/Hello";
 import Message from "./components/Message";
 
 function App() {
-  return <Message />;
+  return <Counter />;
 }
 
 export default App;
