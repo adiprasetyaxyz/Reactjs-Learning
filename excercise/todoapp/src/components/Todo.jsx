@@ -1,15 +1,21 @@
 export default function Todo({ item, todos, setTodos }) {
   function handleDelete() {
-    console.log(item);
-    setTodos(
-      todos.filter((value) => {
-        return value !== item;
-      })
-    );
+    setTodos(todos.filter((list) => list !== item));
   }
+  function handleDone(name) {
+    console.log("item done" + item.name);
+    const newArray = todos.map((todo) =>
+      todo.name === name ? { ...todo, done: !todo.done } : todo
+    );
+    setTodos(newArray);
+    console.log(todos);
+  }
+  let classDone = item.done ? "completed" : "";
   return (
     <div>
-      <div>{item}</div>
+      <div onClick={() => handleDone(item.name)} className={classDone}>
+        {item.name}{" "}
+      </div>
       <span>
         <button onClick={() => handleDelete()}>X</button>
       </span>
